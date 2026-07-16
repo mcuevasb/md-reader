@@ -1,0 +1,23 @@
+{
+  "name": "md-reader",
+  "version": "0.1.0",
+  "description": "Lightweight Markdown reader with Mermaid support.",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "lint": "eslint .",
+    "check": "npm run lint",
+    "test": "npm run check"
+  },
+  "keywords": [
+    "markdown",
+    "mermaid",
+    "viewer"
+  ],
+  "author": "Manuel Cuevas",
+  "license": "MIT",
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.7.0"
+  }
+}

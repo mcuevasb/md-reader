@@ -573,7 +573,7 @@ function parseInline(text) {
     .replace(/~~([^~]+)~~/g, "<del>$1</del>")
     .replace(/(^|[^*])\*([^*\n]+)\*(?!\*)/g, "$1<em>$2</em>")
     .replace(/(^|[^_])_([^_\n]+)_(?!_)/g, "$1<em>$2</em>")
-    .replace(/  \n/g, "<br>");
+    .replace(/ {2}\n/g, "<br>");
 
   codeTokens.forEach((html, index) => {
     output = output.replace(`@@CODETOKEN${index}@@`, html);
