@@ -7,6 +7,7 @@ The project follows Semantic Versioning.
 ---
 
 ## [Unreleased]
+- Tested protected branch workflow.
 
 ### Planned
 
