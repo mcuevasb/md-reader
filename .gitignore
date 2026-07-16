@@ -1,0 +1,19 @@
+# Visual Studio Code
+.vscode/
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Registros
+*.log
+
+# Archivos temporales
+*.tmp
+*.temp
+
+# Variables y secretos
+.env
+.env.*
+!.env.example

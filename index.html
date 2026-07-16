@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="light dark" />
+  <title>Lector de Markdown</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="app-header">
+    <div class="brand">
+      <a class="brand-mark-link" href="./" data-home-link aria-label="Ir al inicio del Lector de Markdown">
+        <span class="brand-mark" aria-hidden="true">MD</span>
+      </a>
+      <div class="brand-copy">
+        <a class="brand-title-link" href="./" data-home-link>
+          <h1>Lector de Markdown</h1>
+        </a>
+        <p id="file-status">Selecciona o arrastra un archivo .md</p>
+      </div>
+    </div>
+
+    <div class="header-actions" aria-label="Herramientas del lector">
+      <label class="button primary" for="file-input">Abrir archivo</label>
+      <input id="file-input" type="file" accept=".md,.markdown,text/markdown,text/plain" hidden />
+      <button id="close-file" class="button close-file-button" type="button" title="Cerrar archivo" aria-label="Cerrar el archivo abierto" hidden>Cerrar archivo</button>
+
+      <button id="decrease-font" class="button icon-button" type="button" title="Reducir texto" aria-label="Reducir tamaño del texto">A−</button>
+      <button id="increase-font" class="button icon-button" type="button" title="Aumentar texto" aria-label="Aumentar tamaño del texto">A+</button>
+      <button id="toggle-theme" class="button icon-button" type="button" title="Cambiar tema" aria-label="Cambiar entre tema claro y oscuro">◐</button>
+      <button id="print-document" class="button icon-button" type="button" title="Imprimir" aria-label="Imprimir documento">⎙</button>
+    </div>
+  </header>
+
+  <div class="app-layout">
+    <aside id="sidebar" class="sidebar" aria-label="Tabla de contenido">
+      <div class="sidebar-header">
+        <h2>Contenido</h2>
+        <button id="close-sidebar" class="plain-button mobile-only" type="button" aria-label="Cerrar tabla de contenido">×</button>
+      </div>
+      <nav id="toc" class="toc">
+        <p class="muted">La tabla de contenido aparecerá al abrir un documento.</p>
+      </nav>
+    </aside>
+
+    <main class="reader-shell">
+      <div class="mobile-toolbar mobile-only">
+        <button id="open-sidebar" class="button" type="button">Contenido</button>
+        <span id="mobile-file-name" class="mobile-file-name">Sin archivo</span>
+      </div>
+
+      <section id="drop-zone" class="drop-zone" aria-label="Zona para soltar un archivo Markdown">
+        <div class="drop-zone-content">
+          <div class="drop-icon" aria-hidden="true">↓</div>
+          <h2>Abre un archivo Markdown</h2>
+          <p>Arrastra aquí un archivo <strong>.md</strong> o selecciónalo desde tu equipo.</p>
+          <label class="button primary large" for="file-input">Seleccionar archivo</label>
+          <p class="privacy-note">El archivo se procesa únicamente en tu navegador; no se envía a ningún servidor.</p>
+        </div>
+      </section>
+
+      <article id="document" class="markdown-body" aria-live="polite" hidden></article>
+    </main>
+  </div>
+
+  <div id="drop-overlay" class="drop-overlay" aria-hidden="true">
+    <div>
+      <span aria-hidden="true">＋</span>
+      <strong>Suelta el archivo Markdown</strong>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
